@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<meta charset="utf-8">
+	<title>{$portfolio_title}</title>
+	<meta name="keywords" content="{$portfolio_title}" />
+	<meta name="description" content="{$portfolio_brief}" />
+	{include file="global_css.html"}
+	
+</head>
+
+<body>
+<div class="page-wrapper">
+	
+	
+	{include file="global_top.html" menu_portfolio="active" menu_portfolio_project="active"}
+	
+	
+	{include file="global_right.html"}
+	
+	
+	<!--Portfolio Single Section-->
+	<section class="portfolio-single-section">
+		<div class="auto-container">
+			<div class="inner-box">
+				<div class="image">
+				
+					{section name=var loop=$portfolio2photo_id}
+					
+					{if $smarty.section.var.index == 0}
+					{assign var="slider_status" value="active"}
+					{else}
+					{assign var="slider_status" value=""}
+					{/if}
+					
+					<!-- Photo Item -->
+					
+					<div style="margin-bottom:30px">
+					<img src="images/portfolio/big/{$portfolio2photo_id[var]}/thumbnail.jpg" alt="" />
+					</div>
+					
+					<!-- End of Photo Item -->
+					{/section}
+					
+					
+				</div>
+				<h2>{$portfolio_title}</h2>
+				<div class="row clearfix">
+					<div class="content-column col-md-12 col-sm-12 col-xs-12">
+						<div class="inner-column">
+							<div class="text">
+								<p>{$portfolio_brief}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			
+			<!-- Prev / Next Section -->
+			<div class="post-options">
+				<div class="inner-box">
+					<div class="clearfix">
+						<ul>
+							
+							{if $prev_link}
+							<li class="prev"><a href="{$prev_link}"><span class="icon flaticon-left-arrow-1"></span></a></li>
+							{/if}
+							
+							{if $next_link}
+							<li class="next"><a href="{$next_link}"><span class="icon flaticon-right-arrow-1"></span></a></li>
+							{/if}
+							
+							<li class="grid"><a href="project.html"><span class="icon fa fa-th-large"></span></a></li>
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- End of Prev / Next Section -->
+			
+			
+		</div>
+	</section>
+	<!--End of Portfolio Single Section-->
+	
+	
+	{include file="global_footer.html"}
+	
+	
+</div>
+<!--End pagewrapper-->
+
+
+{include file="global_js.html"}
+
+
+</body>
+</html>

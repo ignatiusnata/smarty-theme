@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<meta charset="utf-8">
+	<title>Video Gallery</title>
+	<meta name="keywords" content="video gallery" />
+	<meta name="description" content="Have a look at my video guides and presentation regarding ICT industry." />
+	{include file="global_css.html"}
+	
+</head>
+
+<body>
+<div class="page-wrapper">
+	
+	
+	{include file="global_top.html" menu_portfolio="active" menu_portfolio_video="active"}
+	
+	
+	{include file="global_right.html"}
+	
+	
+	<!-- Video Gallery Section -->
+	<section class="gallery-section gallery-2-column">
+		<div class="auto-container">
+			
+			
+			<div class="mixitup-gallery">
+				<div class="filter-list row clearfix">
+					
+					{section name=var loop=$video_id}
+					
+					<!--Video Item-->
+					<div class="gallery-block mix all natural col-lg-6 col-md-6 col-sm-6 col-xs-12">
+						<div class="inner-box">
+							<div class="image">
+								<img src="images/video/medium/{$video_id[var]}/thumbnail.jpg" alt="{$video_title[var]}" />
+								<a href="{$video_url[var]}"></a>
+								<div class="overlay-box">
+									<div class="content-box">
+										<div class="content">
+											<h3><a href="{$video_url[var]}">{$video_title[var]}</a></h3>
+											<div class="title">click to watch video</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- End of Video Item-->
+					
+					{/section}
+					
+				</div>
+			</div>
+			
+			
+			<!-- Paging Section -->
+			{if $navigation_total > 1}
+			<div class="styled-pagination text-center" style="margin-top:50px">
+				<ul class="clearfix">
+				
+					{section name=var loop=$navigation_page_list}
+					{if $navigation_page_list[var] == $navigation_page} {assign var="navigation_page_active" value="pagination_active"}
+					{else} {assign var="navigation_page_active" value=""}
+					{/if}
+				
+					<li class="{$navigation_page_active}" onclick="location.href='video-index/page{$navigation_page_list[var]}.html'">
+					<a href="video-index/page{$navigation_page_list[var]}.html">{$navigation_page_list[var]}</a>
+					</li>
+					
+					{/section}
+				</ul>
+			</div>
+			{/if}
+			<!-- End of Paging Section -->
+			
+			
+		</div>
+	</section>
+	<!-- End of Video Gallery Section -->
+	
+	
+	{include file="global_footer.html"}
+	
+	
+</div>
+<!--End pagewrapper-->
+
+
+<!--Scroll to top-->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="icon fa fa-angle-double-up"></span></div>
+
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.fancybox.js"></script>
+<script src="js/owl.js"></script>
+<script src="js/mixitup.js"></script>
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="js/appear.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+</html>

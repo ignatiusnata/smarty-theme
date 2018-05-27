@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<meta charset="utf-8">
+	<title>{$video_title}</title>
+	<meta name="keywords" content="{$video_title}" />
+	<meta name="description" content="{$video_brief}" />
+	{include file="global_css.html"}
+	
+</head>
+
+<body>
+<div class="page-wrapper">
+	
+	
+	{include file="global_top.html" menu_portfolio="active" menu_portfolio_video="active"}
+	
+	
+	{include file="global_right.html"}
+	
+	
+	<!-- Video Single Section-->
+	<section class="portfolio-single-section">
+		<div class="auto-container">
+			<div class="inner-box">
+				
+				
+				<!-- Youtube Video -->
+				<div class="image">
+					<div class='custom_video'><iframe src='{$video_content}' frameborder='0' allowfullscreen></iframe></div>
+				</div>
+				<!-- End of Youtube Video -->
+				
+				
+				<!-- Video Details -->
+				<h2>{$video_title}</h2>
+				<div class="row clearfix">
+					<div class="content-column col-md-12 col-sm-12 col-xs-12">
+						<div class="inner-column">
+							<div class="text">
+								<p>{$video_brief}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- End of Video Details -->
+				
+				
+			</div>
+			
+			
+			<!-- Prev / Next Section -->
+			<div class="post-options">
+				<div class="inner-box">
+					<div class="clearfix">
+						<ul>
+							
+							{if $prev_link}
+							<li class="prev"><a href="{$prev_link}"><span class="icon flaticon-left-arrow-1"></span></a></li>
+							{/if}
+							
+							{if $next_link}
+							<li class="next"><a href="{$next_link}"><span class="icon flaticon-right-arrow-1"></span></a></li>
+							{/if}
+							
+							<li class="grid"><a href="video.html"><span class="icon fa fa-th-large"></span></a></li>
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- End of Prev / Next Section -->
+			
+			
+		</div>
+	</section>
+	<!-- End of Video Single Section-->
+	
+	
+	{include file="global_footer.html"}
+	
+	
+</div>
+<!--End pagewrapper-->
+
+
+{include file="global_js.html"}
+
+
+</body>
+</html>

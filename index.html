@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<meta charset="utf-8">
+	<title>Portfolio Website</title>
+	<meta name="keywords" content="portfolio showcase" />
+	<meta name="description" content="Personal Portfolio Website to show skills and past projects." />
+	{include file="global_css.html"}
+	
+</head>
+
+<body>
+<div class="page-wrapper">
+	
+	
+	{include file="global_top.html" menu_home="active"}
+	
+	
+	{include file="global_right.html"}
+	
+	
+	<!--Main Slider-->
+	<section class="main-slider slider-three">
+		<ul class="social-icon-one">
+			<li><a href="{$social_facebook}"><span class="fab fa-facebook-square"></span></a></li>
+			<li><a href="{$social_linkedin}"><span class="fab fa-linkedin"></span></a></li>
+			<li><a href="{$social_youtube}"><span class="fab fa-youtube"></span></a></li>
+		</ul>
+		<div class="rev_slider_wrapper fullwidthbanner-container"  id="rev_slider_two_wrapper" data-source="gallery">
+			<div class="rev_slider fullwidthabanner" id="rev_slider_two" data-version="5.4.1">
+				<ul>
+				
+					{section name=var loop=$slider_id}
+					
+					{if $smarty.section.var.index == 0}
+					{assign var="slider_status" value="active"}
+					{else}
+					{assign var="slider_status" value=""}
+					{/if}
+					
+					<!-- Slider Item -->
+					<li data-description="{$slider_title[var]}" data-easein="default" data-easeout="default" data-fsmasterspeed="1500" data-fsslotamount="7" data-fstransition="fade" data-hideafterloop="0" data-hideslideonmobile="off" data-index="{$slider_id[var]}" data-masterspeed="default" data-param1="" data-param10="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-rotate="0" data-saveperformance="off" data-slotamount="default" data-thumb="images/slider/big/{$slider_id[var]}/thumbnail.jpg" data-title="" data-transition="parallaxvertical">
+						<img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="images/slider/big/{$slider_id[var]}/thumbnail.jpg"> 
+						
+						{literal}
+						<div class="tp-caption" 
+						data-paddingbottom="[0,0,0,0]"
+						data-paddingleft="[0,0,0,0]"
+						data-paddingright="[0,0,0,0]"
+						data-paddingtop="[0,0,0,0]"
+						data-responsive_offset="on"
+						data-type="text"
+						data-height="none"
+						data-width="['1000','850','650','420']"
+						data-whitespace="normal"
+						data-hoffset="['0','0','0','0']"
+						data-voffset="['0','0','0','0']"
+						data-x="['center','center','center','center']"
+						data-y="['middle','middle','middle','middle']"
+						data-textalign="['top','top','top','top']"
+						data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'
+						>
+						{/literal}
+						<h2 class="style-two">{$slider_title[var]}</h2>
+						</div>
+					
+					</li>
+					<!-- End of Slider Item -->
+					
+					{/section}
+					
+				</ul>
+			</div>
+			
+		</div>
+	</section>
+	<!--End of Main Slider-->
+	
+	
+	<!--Portfolio Section -->
+	<section class="gallery-section-two">
+		<div class="auto-container">
+			<div class="sortable-masonry">
+				
+				<div class="items-container row clearfix">
+					
+					{section name=var loop=$portfolio_id loop=6}
+					
+					{if $smarty.section.var.index == 0}
+					{assign var="portfolio_folder" value="big"}
+					{assign var="portfolio_class" value="col-lg-8 col-md-8 col-sm-12 col-xs-12"}
+					{/if}
+					
+					{if $smarty.section.var.index == 1}
+					{assign var="portfolio_folder" value="medium"}
+					{assign var="portfolio_class" value="col-lg-4 col-md-4 col-sm-6 col-xs-12"}
+					{/if}
+					
+					{if $smarty.section.var.index == 2}
+					{assign var="portfolio_folder" value="small"}
+					{assign var="portfolio_class" value="col-lg-4 col-md-4 col-sm-6 col-xs-12"}
+					{/if}
+					
+					
+					{if $smarty.section.var.index == 3}
+					{assign var="portfolio_folder" value="small"}
+					{assign var="portfolio_class" value="col-lg-4 col-md-4 col-sm-6 col-xs-12"}
+					{/if}
+					
+					{if $smarty.section.var.index == 4}
+					{assign var="portfolio_folder" value="big"}
+					{assign var="portfolio_class" value="col-lg-8 col-md-8 col-sm-12 col-xs-12"}
+					{/if}
+					
+					{if $smarty.section.var.index == 5}
+					{assign var="portfolio_folder" value="small"}
+					{assign var="portfolio_class" value="col-lg-4 col-md-4 col-sm-6 col-xs-12"}
+					{/if}
+					
+					<!--Portfolio Item -->
+					<div class="gallery-block masonry-item all {$portfolio_class}">
+						<div class="inner-box">
+							<div class="image">
+								<img src="images/portfolio/{$portfolio_folder}/{$portfolio_photo[var]}/thumbnail.jpg" alt="" />
+								<a href="images/portfolio/big/{$portfolio_photo[var]}/thumbnail.jpg" data-fancybox="gallery" class="lightbox-image link-box" title="Image Title Here"><span class="fa fa-expand"></span></a>
+								<div class="overlay-box">
+									<div class="content-box">
+										<div class="content">
+											<h3><a href="{$portfolio_url[var]}">{$portfolio_title[var]}</a></h3>
+											<div class="title">click to see details</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- End of Portfolio Item-->
+					
+					{/section}
+					
+				</div>
+				
+			</div>
+		</div>
+	</section>
+	<!--End of Portfolio Section -->
+	
+	
+	<!--Testimonial Section-->
+	<section class="testimonial-section">
+		<div class="auto-container">
+			<div class="single-item-carousel owl-carousel owl-theme">
+				
+				{section name=var loop=$testimonial_id}
+				
+				<!-- Testimonial Item -->
+				<div class="testimonial-block">
+					<div class="inner-box">
+						<div class="icon-box">
+							<span class="icon flaticon-straight-quotes"></span>
+						</div>
+						<div class="text">{$testimonial_comment[var]}</div>
+						<div class="author">{$testimonial_client[var]} - <span>{$testimonial_position[var]}</span></div>
+					</div>
+				</div>
+				<!-- End of Testimonial Item -->
+				
+				{/section}
+				
+			</div>
+		</div>
+	</section>
+	<!--End of Testimonial Section-->
+	
+	
+	{include file="global_footer.html"}
+	
+	
+</div>
+<!--End pagewrapper-->
+
+
+{include file="global_js.html"}
+
+
+</body>
+</html>

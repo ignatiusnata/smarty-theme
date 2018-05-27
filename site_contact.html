@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<meta charset="utf-8">
+	<title>Contact Me</title>
+	<meta name="keywords" content="contact natasudharma" />
+	<meta name="description" content="Contact me for more detailed information regarding my skills and how I can help you out." />
+	{include file="global_css.html"}
+	
+	<!-- recaptcha -->
+	<script src='https://www.google.com/recaptcha/api.js'></script>
+</head>
+
+<body>
+<div class="page-wrapper">
+	
+	
+	{include file="global_top.html" menu_contact="active"}
+	
+	
+	{include file="global_right.html"}
+	
+	
+	<!--Contact Section-->
+	<div class="contact-section">
+		<div class="auto-container">
+			<div class="row clearfix">
+				
+				
+				<!--Form Column-->
+				<div class="form-column col-md-8 col-sm-12 col-xs-12" style="margin-bottom:100px">
+					<div class="inner-column">
+						
+						<!-- Contact Form -->
+						<div class="contact-form">
+							
+							<form method="post" action="system_site_contact.php" id="contact-form">
+								<div class="row clearfix">
+									<div class="col-md-12 col-sm-12 col-xs-12 form-group">
+									<p>Please fill the following contact form completely to send a message to me ...</p>
+									</div>
+								</div>
+								<div class="row clearfix">
+									<div class="col-md-6 col-sm-12 col-xs-12 form-group">
+										<input type="text" name="username" placeholder="Name" required>
+									</div>
+									
+									<div class="col-md-6 col-sm-12 col-xs-12 form-group">
+										<input type="email" name="email" placeholder="Email" required>
+									</div>
+									
+									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
+										<textarea name="message" placeholder="Message" style="height:200px"></textarea>
+									</div>
+									
+									<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center form-group">
+										<button class="theme-btn btn-style-three" data-sitekey="6LdCpFoUAAAAACTz0qM7CJkIwNJOelp3-o5mLNc0" data-callback="YourOnSubmitFn" type="submit" name="submit-form">Send Message  <span class="icon flaticon-right-arrow-1"></span></button>
+									</div>
+									
+								</div>
+							</form>
+							
+						</div>
+						<!--End of Contact Form -->
+						
+					</div>
+				</div>
+				<!--End of Form Column-->
+				
+				
+				<!--Sidebar Column-->
+				<div class="info-column col-md-4 col-sm-12 col-xs-12">
+					{include file="global_contact_details.html"}
+				</div>
+				<!--End of Sidebar Column-->
+				
+				
+			</div>
+		</div>
+	</div>
+	<!--End of Contact Section -->
+	
+	
+	{include file="global_footer.html"}
+	
+	
+</div>
+<!--End pagewrapper-->
+
+
+<!--Scroll to top-->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="icon fa fa-angle-double-up"></span></div>
+
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.fancybox.js"></script>
+<script src="js/owl.js"></script>
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="js/appear.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/validate.js"></script>
+<script src="js/script.js"></script>
+
+
+</body>
+</html>

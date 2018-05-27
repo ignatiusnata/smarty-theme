@@ -1,0 +1,38 @@
+					<li class="dropdown">
+						
+						
+						<!-- Current Language Symbol Section -->
+						<a class="dropdown-toggle" data-toggle="dropdown"> 
+							{$current_lang_symbol}
+							<b class="caret"></b>
+						</a>
+						<!-- End of Current Language Symbol Section -->
+						
+						
+						<!-- Language Menu -->
+						<ul class="dropdown-menu">
+							
+							
+							<!-- chinese -->
+							{if $current_lang_id != 1}
+							<li><a href="chinese.html">中文 Chinese</a></li>
+							{/if}
+							
+							
+							<!-- english -->
+							{if $current_lang_id != 2}
+							<li><a href="english.html">English</a></li>
+							{/if}
+							
+							
+							<!-- germany / deutsch -->
+							{if $current_lang_id != 3}
+							<li><a href="deutsch.html">Deutsch</a></li>
+							{/if}
+							
+							
+						</ul>
+						<!-- End of Language Menu -->
+						
+						
+					</li>
